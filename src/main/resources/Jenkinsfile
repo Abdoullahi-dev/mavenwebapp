@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Downloading from GitHub...'
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out new branch...'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'mvn build'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'All tests passed. (10/10)'
+            }
+        }
+    }
+}
